@@ -1,17 +1,28 @@
-from triangles import Triangles
+from cuddlytoy import *
 
-a = Triangles()
-b = Triangles(2.0)
-c = Triangles(4, 3, 5)
-d = Triangles(b)
+choice = ""
 
-collection = [a, b, c, d]
+print(f"""Choose the following
+    1 for Engine Driver Teddies
+    2 for Gardener Teddies
+    3 for CLown Bunnies
+    4 for Bank Manager Bunnier""")
 
-for item in collection:
-    print(item)
-    print(f"is Triangle Right Angled: {item.isHypotenuse()}")
-    print(f"Perimeter: {item.perimeter()}")
-    print()
+choice = input("Enter your Choice: ")
+size = input("Enter Size(Small, Large, Medium): ")
+
+match choice:
+    case "1":
+        x = EngineDrivers(size)
+    case "2":
+        x = Gardeners(size)
+    case "3":
+        x = Clowns(size)
+    case "4":
+        x = BankManagers(size)
 
 
-print(f"# of Traingles: {Triangles.counter()}")
+
+print(x.speak())        
+print(x)
+print(x.speak())
